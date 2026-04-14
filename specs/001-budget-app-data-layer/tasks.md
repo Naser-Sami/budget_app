@@ -33,12 +33,12 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T005 [P] Create all domain enumerations (`TransactionType`, `CategoryType`, `AccountType`, `BudgetPeriod`) in `lib/data/models/enums.dart` per `specs/001-budget-app-data-layer/data-model.md`
-- [ ] T006 [P] Create all repository exception types (`EntityNotFoundException`, `DuplicateEntityException`, `ProtectedEntityException`, `EntityInUseException`, `ValidationException`) in `lib/data/repositories/repository_exceptions.dart` per `specs/001-budget-app-data-layer/contracts/repository-interfaces.md`
-- [ ] T007 [P] Create `TransactionModel` as an immutable `Equatable` class with all fields, `copyWith`, and `props` in `lib/data/models/transaction_model.dart` per `specs/001-budget-app-data-layer/data-model.md`
-- [ ] T008 [P] Create `BudgetModel` as an immutable `Equatable` class with all fields, `copyWith`, and `props` in `lib/data/models/budget_model.dart` per `specs/001-budget-app-data-layer/data-model.md`
-- [ ] T009 [P] Create `CategoryModel` as an immutable `Equatable` class with all fields, `copyWith`, and `props` in `lib/data/models/category_model.dart` per `specs/001-budget-app-data-layer/data-model.md`
-- [ ] T010 [P] Create `AccountModel` as an immutable `Equatable` class with all fields, `copyWith`, and `props` in `lib/data/models/account_model.dart` per `specs/001-budget-app-data-layer/data-model.md`
+- [x] T005 [P] Create all domain enumerations (`TransactionType`, `CategoryType`, `AccountType`, `BudgetPeriod`) in `lib/data/models/enums.dart` per `specs/001-budget-app-data-layer/data-model.md`
+- [x] T006 [P] Create all repository exception types (`EntityNotFoundException`, `DuplicateEntityException`, `ProtectedEntityException`, `EntityInUseException`, `ValidationException`) in `lib/data/repositories/repository_exceptions.dart` per `specs/001-budget-app-data-layer/contracts/repository-interfaces.md`
+- [x] T007 [P] Create `TransactionModel` as an immutable `Equatable` class with all fields, `copyWith`, and `props` in `lib/data/models/transaction_model.dart` per `specs/001-budget-app-data-layer/data-model.md`
+- [x] T008 [P] Create `BudgetModel` as an immutable `Equatable` class with all fields, `copyWith`, and `props` in `lib/data/models/budget_model.dart` per `specs/001-budget-app-data-layer/data-model.md`
+- [x] T009 [P] Create `CategoryModel` as an immutable `Equatable` class with all fields, `copyWith`, and `props` in `lib/data/models/category_model.dart` per `specs/001-budget-app-data-layer/data-model.md`
+- [x] T010 [P] Create `AccountModel` as an immutable `Equatable` class with all fields, `copyWith`, and `props` in `lib/data/models/account_model.dart` per `specs/001-budget-app-data-layer/data-model.md`
 - [ ] T011 [P] Create `TransactionsTable` Drift table (columns: id TEXT PK, amount REAL, type TEXT, date INTEGER, category_id TEXT FK, account_id TEXT FK, description TEXT nullable, created_at INTEGER, updated_at INTEGER) in `lib/data/local/tables/transactions_table.dart`
 - [ ] T012 [P] Create `BudgetsTable` Drift table (columns: id TEXT PK, category_id TEXT FK, limit_amount REAL, period_type TEXT, period_start INTEGER, period_end INTEGER nullable, created_at INTEGER, updated_at INTEGER) in `lib/data/local/tables/budgets_table.dart`
 - [ ] T013 [P] Create `CategoriesTable` Drift table (columns: id TEXT PK, name TEXT UNIQUE, type TEXT, is_default INTEGER, created_at INTEGER) in `lib/data/local/tables/categories_table.dart`
