@@ -71,12 +71,12 @@
 
 **Independent Test**: Create a budget (category FK, limitAmount=500, monthly period). Create transactions totaling 450 under the same category. Call `BudgetService.getConsumption()` and verify `amountSpent=450`, `budgetRemaining=50`, `isOverBudget=false`.
 
-- [ ] T021 [P] [US2] Create `IBudgetRepository` abstract class with all method signatures including `getActiveForCategory(categoryId, date)` in `lib/data/repositories/i_budget_repository.dart` per `specs/001-budget-app-data-layer/contracts/repository-interfaces.md`
-- [ ] T022 [P] [US2] Create `SummaryModel` and `CategorySummaryModel` as immutable `Equatable` classes with all computed fields and `props` in `lib/data/models/summary_model.dart` per `specs/001-budget-app-data-layer/data-model.md`
-- [ ] T023 [US2] Create `BudgetDao` as a Drift DAO with: `getAll()`, `getById()`, `getByCategory()`, `getActiveForCategory()` (date range overlap query), `insertBudget()`, `updateBudget()`, `deleteBudget()`, `watchAll()` in `lib/data/local/daos/budget_dao.dart` (depends on T016)
-- [ ] T024 [US2] Create `DriftBudgetRepository` implementing `IBudgetRepository`, delegating to `BudgetDao`, with `ValidationException` on `limitAmount <= 0` or invalid custom period, in `lib/data/repositories/impl/drift_budget_repository.dart` (depends on T021, T023)
-- [ ] T025 [US2] Register `BudgetDao` in `AppDatabase` and re-run `build_runner` in `lib/data/local/app_database.dart` (depends on T024)
-- [ ] T026 [US2] Implement `BudgetService` with `getConsumption(categoryId, budget)` that sums matching transactions for the period and returns a `CategorySummaryModel` with `amountSpent`, `budgetRemaining`, and `isOverBudget` in `lib/data/services/budget_service.dart` (depends on T017, T021)
+- [x] T021 [P] [US2] Create `IBudgetRepository` abstract class with all method signatures including `getActiveForCategory(categoryId, date)` in `lib/data/repositories/i_budget_repository.dart` per `specs/001-budget-app-data-layer/contracts/repository-interfaces.md`
+- [x] T022 [P] [US2] Create `SummaryModel` and `CategorySummaryModel` as immutable `Equatable` classes with all computed fields and `props` in `lib/data/models/summary_model.dart` per `specs/001-budget-app-data-layer/data-model.md`
+- [x] T023 [US2] Create `BudgetDao` as a Drift DAO with: `getAll()`, `getById()`, `getByCategory()`, `getActiveForCategory()` (date range overlap query), `insertBudget()`, `updateBudget()`, `deleteBudget()`, `watchAll()` in `lib/data/local/daos/budget_dao.dart` (depends on T016)
+- [x] T024 [US2] Create `DriftBudgetRepository` implementing `IBudgetRepository`, delegating to `BudgetDao`, with `ValidationException` on `limitAmount <= 0` or invalid custom period, in `lib/data/repositories/impl/drift_budget_repository.dart` (depends on T021, T023)
+- [x] T025 [US2] Register `BudgetDao` in `AppDatabase` and re-run `build_runner` in `lib/data/local/app_database.dart` (depends on T024)
+- [x] T026 [US2] Implement `BudgetService` with `getConsumption(categoryId, budget)` that sums matching transactions for the period and returns a `CategorySummaryModel` with `amountSpent`, `budgetRemaining`, and `isOverBudget` in `lib/data/services/budget_service.dart` (depends on T017, T021)
 
 **Checkpoint**: `IBudgetRepository` + `BudgetService` are functional — User Story 2 is fully testable independently.
 
