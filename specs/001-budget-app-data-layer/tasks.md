@@ -88,10 +88,10 @@
 
 **Independent Test**: Call `SeedService.seedDefaultCategories()` twice (idempotency check), verify exactly 10 categories exist. Create a custom category, verify it appears in `getAll()`. Attempt to delete a default category, verify `ProtectedEntityException` is thrown.
 
-- [ ] T027 [P] [US3] Create `ICategoryRepository` abstract class with all method signatures including `getDefaults()`, `getByType()`, and `delete()` (with exception contract) in `lib/data/repositories/i_category_repository.dart` per `specs/001-budget-app-data-layer/contracts/repository-interfaces.md`
-- [ ] T028 [US3] Create `CategoryDao` as a Drift DAO with: `getAll()`, `getById()`, `getDefaults()` (where isDefault=1), `getByType()`, `insertCategory()`, `updateCategory()`, `deleteCategory()` (check referenced transactions before delete), `watchAll()` in `lib/data/local/daos/category_dao.dart` (depends on T016)
+- [x] T027 [P] [US3] Create `ICategoryRepository` abstract class with all method signatures including `getDefaults()`, `getByType()`, and `delete()` (with exception contract) in `lib/data/repositories/i_category_repository.dart` per `specs/001-budget-app-data-layer/contracts/repository-interfaces.md`
+- [x] T028 [US3] Create `CategoryDao` as a Drift DAO with: `getAll()`, `getById()`, `getDefaults()` (where isDefault=1), `getByType()`, `insertCategory()`, `updateCategory()`, `deleteCategory()` (check referenced transactions before delete), `watchAll()` in `lib/data/local/daos/category_dao.dart` (depends on T016)
 - [ ] T029 [US3] Create `DriftCategoryRepository` implementing `ICategoryRepository`, throwing `ProtectedEntityException` on delete of a default category and `EntityInUseException` if any transaction references it, in `lib/data/repositories/impl/drift_category_repository.dart` (depends on T027, T028)
-- [ ] T030 [US3] Register `CategoryDao` in `AppDatabase` and re-run `build_runner` in `lib/data/local/app_database.dart` (depends on T029)
+- [x] T030 [US3] Register `CategoryDao` in `AppDatabase` and re-run `build_runner` in `lib/data/local/app_database.dart` (depends on T029)
 - [ ] T031 [US3] Implement `SeedService.seedDefaultCategories()` with 10 hardcoded default categories (6 expense: Food & Dining, Transport, Housing, Entertainment, Health, Shopping; 4 income: Salary, Freelance, Investment, Other Income) — idempotent via `getDefaults()` check — in `lib/data/services/seed_service.dart` (depends on T027)
 
 **Checkpoint**: `ICategoryRepository` + `SeedService` are functional — User Story 3 is fully testable independently.

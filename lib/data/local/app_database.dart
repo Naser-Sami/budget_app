@@ -11,6 +11,7 @@ import 'tables/categories_table.dart';
 import 'tables/transactions_table.dart';
 import 'daos/transaction_dao.dart';
 import 'daos/budget_dao.dart';
+import 'daos/category_dao.dart';
 
 part 'app_database.g.dart';
 
@@ -22,6 +23,7 @@ part 'app_database.g.dart';
 ], daos: [
   TransactionDao,
   BudgetDao,
+  CategoryDao,
 ])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
