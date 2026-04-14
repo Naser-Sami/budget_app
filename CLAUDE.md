@@ -3,6 +3,8 @@
 Auto-generated from all feature plans. Last updated: 2026-04-14
 
 ## Active Technologies
+- Dart 3.x (SDK ^3.11.4) + flutter_bloc ^9.x (Cubit), equatable ^2.x, existing data layer interfaces (002-cubit-presentation-layer)
+- Drift (SQLite via existing data layer — Cubits access storage only through repository interfaces) (002-cubit-presentation-layer)
 
 - Dart 3.x (Flutter SDK ^3.11.4, Dart ^3.0) + `flutter_bloc ^9.x`, `equatable ^2.x`, `drift ^2.x`, `sqlite3_flutter_libs`, `path_provider`, `uuid ^4.x`, `bloc_test ^10.x`, `mocktail ^1.x` (001-budget-app-data-layer)
 
@@ -37,6 +39,7 @@ flutter analyze
 Dart 3.x (Flutter SDK ^3.11.4, Dart ^3.0): Follow standard conventions
 
 ## Recent Changes
+- 002-cubit-presentation-layer: Added Dart 3.x (SDK ^3.11.4) + flutter_bloc ^9.x (Cubit), equatable ^2.x, existing data layer interfaces
 
 - 001-budget-app-data-layer: Added Dart 3.x (Flutter SDK ^3.11.4, Dart ^3.0) + `flutter_bloc ^9.x`, `equatable ^2.x`, `drift ^2.x`, `sqlite3_flutter_libs`, `path_provider`, `uuid ^4.x`, `bloc_test ^10.x`, `mocktail ^1.x`
 
