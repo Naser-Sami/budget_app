@@ -15,7 +15,22 @@ tests/
 
 ## Commands
 
-# Add commands for Dart 3.x (Flutter SDK ^3.11.4, Dart ^3.0)
+```bash
+# Install dependencies
+flutter pub get
+
+# Regenerate Drift database code after changing tables or DAOs
+dart run build_runner build --delete-conflicting-outputs
+
+# Run all tests
+flutter test
+
+# Run data layer tests only
+flutter test test/data/
+
+# Static analysis
+flutter analyze
+```
 
 ## Code Style
 
