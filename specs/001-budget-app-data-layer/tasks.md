@@ -56,10 +56,10 @@
 
 **Independent Test**: Record a transaction (amount, type, date, category FK, account FK), call `getAll()`, verify 1 result with all fields intact. Call `getByDateRange()` with matching/non-matching ranges, verify correct results. See `specs/001-budget-app-data-layer/quickstart.md` for the smoke-test snippet.
 
-- [ ] T017 [P] [US1] Create `ITransactionRepository` abstract class with all method signatures and doc comments in `lib/data/repositories/i_transaction_repository.dart` per `specs/001-budget-app-data-layer/contracts/repository-interfaces.md`
-- [ ] T018 [US1] Create `TransactionDao` as a Drift DAO with: `getAll()` (order by date DESC), `getById()`, `getByDateRange()` (inclusive), `getByCategory()`, `getByAccount()`, `insertTransaction()`, `updateTransaction()`, `deleteTransaction()`, `watchAll()` stream in `lib/data/local/daos/transaction_dao.dart` (depends on T016)
-- [ ] T019 [US1] Create `DriftTransactionRepository` implementing `ITransactionRepository`, delegating to `TransactionDao`, converting between Drift row types and `TransactionModel`, throwing typed exceptions from `repository_exceptions.dart` on violations in `lib/data/repositories/impl/drift_transaction_repository.dart` (depends on T017, T018)
-- [ ] T020 [US1] Register `TransactionDao` in `AppDatabase` via `@DriftAccessor` and re-run `build_runner` in `lib/data/local/app_database.dart` (depends on T019)
+- [x] T017 [P] [US1] Create `ITransactionRepository` abstract class with all method signatures and doc comments in `lib/data/repositories/i_transaction_repository.dart` per `specs/001-budget-app-data-layer/contracts/repository-interfaces.md`
+- [x] T018 [US1] Create `TransactionDao` as a Drift DAO with: `getAll()` (order by date DESC), `getById()`, `getByDateRange()` (inclusive), `getByCategory()`, `getByAccount()`, `insertTransaction()`, `updateTransaction()`, `deleteTransaction()`, `watchAll()` stream in `lib/data/local/daos/transaction_dao.dart` (depends on T016)
+- [x] T019 [US1] Create `DriftTransactionRepository` implementing `ITransactionRepository`, delegating to `TransactionDao`, converting between Drift row types and `TransactionModel`, throwing typed exceptions from `repository_exceptions.dart` on violations in `lib/data/repositories/impl/drift_transaction_repository.dart` (depends on T017, T018)
+- [x] T020 [US1] Register `TransactionDao` in `AppDatabase` via `@DriftAccessor` and re-run `build_runner` in `lib/data/local/app_database.dart` (depends on T019)
 
 **Checkpoint**: `ITransactionRepository` contract is fulfilled — User Story 1 is fully functional and testable independently.
 

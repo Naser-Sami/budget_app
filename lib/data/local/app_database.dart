@@ -9,6 +9,7 @@ import 'tables/accounts_table.dart';
 import 'tables/budgets_table.dart';
 import 'tables/categories_table.dart';
 import 'tables/transactions_table.dart';
+import 'daos/transaction_dao.dart';
 
 part 'app_database.g.dart';
 
@@ -17,6 +18,8 @@ part 'app_database.g.dart';
   BudgetsTable,
   CategoriesTable,
   AccountsTable,
+], daos: [
+  TransactionDao,
 ])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
@@ -25,6 +28,13 @@ class AppDatabase extends _$AppDatabase {
 
   @override
   int get schemaVersion => 1;
+
+  @override
+  MigrationStrategy get migration => MigrationStrategy(
+        beforeOpen: (details) async {
+          await customStatement('PRAGMA foreign_keys = ON');
+        },
+      );
 }
 
 LazyDatabase _openConnection() {
